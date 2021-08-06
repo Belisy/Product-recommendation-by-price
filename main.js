@@ -14,7 +14,7 @@ const data = [
 
 // 사용자 입력 받기
 const line = prompt('최대 금액을 입력해주세요.');
-const amount = +line;
+const amount = parseInt(line);
 
 // 주어진 금액으로 살 수 있는 가장 비싼 상품을 구함
 const item = getItemByAmount(data, amount);
@@ -28,13 +28,13 @@ alert(msg);
 
 
 // 아래에 getItemByAmount 함수를 작성하세요.
-
 function getItemByAmount(itemArray, userMoney){
     // 사용자 입력값보다 작거나 같은 요소들 출력하는 함수
         const fillteredArray = itemArray.filter(function(element){
             return element.price<=userMoney
-        )
-    // 위의 함수에서 나온 값을 가격에 따라 정렬
+        })
+    
+    // 사용자 입력값보다 작거나 같은 요소들 중에서 가격에 따라 정렬
     fillteredArray.sort(function(a,b){
         return b.price - a.price
     })
@@ -42,4 +42,3 @@ function getItemByAmount(itemArray, userMoney){
     return  fillteredArray[0]
     }
 
-    // null을 반환하는 것은 잘 모르겠습니다...
