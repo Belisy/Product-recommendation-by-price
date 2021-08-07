@@ -42,3 +42,4 @@ function getItemByAmount(itemArray, userMoney){
     return  fillteredArray[0]
     }
 
+    
